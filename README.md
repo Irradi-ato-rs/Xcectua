@@ -3,7 +3,7 @@
 Xcectua is the **reference implementation of the Xcectua Interface** and is a
 **separate repository** from `rexce`.
 
-The **Xcectua Interface** (published inside the `rexec` repository) defines the
+The **Xcectua Interface** (published inside the `rexce` repository) defines the
 mandatory consumer governance circuit for validating release evidence.  
 Xcectua demonstrates how that interface behaves in a real repository, with real
 CI execution, real signature verification, and real PDR generation.
@@ -26,14 +26,14 @@ It exists to help developers understand and correctly implement the interface.
 
 ## What Xcectua *is not*
 
-- **Not** part of `rexec`
+- **Not** part of `rexce`
 - **Not** a policy authority
 - **Not** a source of truth for governance templates
 - **Not** a dependency for other repositories
 
 Consumers must **not** copy files from the Xcectua repo.  
 They must copy governance files **only** from the Xcectua Interface inside:
-rexec/rexce/xcectua-interface/templates/xcectua-circuit/
+rexce/rexce/xcectua-interface/templates/xcectua-circuit/
 
 This ensures governance invariants cannot drift.
 
@@ -44,7 +44,7 @@ This ensures governance invariants cannot drift.
 Xcectua implements the following mandatory behaviors:
 
 - Evidence is required (`releases/**/release-record.json` must exist)
-- Rexec is pinned via: rer/rer.lock.yml
+- Rexce is pinned via: rer/rer.lock.yml
 - Cosign signature verification is mandatory  
 - Required refs must match: data.policy.signature.verify_refs.required
 - The PDR (Policy Decision Record) is always uploaded (`if: always()`)
