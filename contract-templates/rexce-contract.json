@@ -1,0 +1,64 @@
+{
+  "governance": {
+    "required_paths": [
+      "contract/rexce-contract.yml",
+      "contract/rexce-contract.json",
+      "tests/validate_contract.py",
+      ".github/workflows/rexce-validation.yml",
+      ".github/workflows/rexce-release.yml",
+      ".github/workflows/rexce-daily.yml",
+      ".github/workflows/rexce-weekly.yml",
+      ".github/workflows/rexce-auditor.yml",
+      ".github/workflows/rexce-contract-diff.yml",
+      ".github/workflows/rexce-snapshot-sign.yml",
+      ".github/workflows/rexce-autosync.yml",
+      "scripts/gen-rollups.sh",
+      "scripts/gen-sla.sh",
+      "scripts/gen-heatmap.sh",
+      "scripts/sign-snapshot.sh",
+      "scripts/gen-repo-page.sh",
+      "site/",
+      "wk/",
+      "hist/",
+      "scripts/"
+    ],
+    "scripts": [
+      "gen-rollups.sh",
+      "gen-sla.sh",
+      "gen-heatmap.sh",
+      "sign-snapshot.sh",
+      "gen-repo-page.sh"
+    ],
+    "workflows": [
+      "rexce-validation.yml",
+      "rexce-release.yml",
+      "rexce-daily.yml",
+      "rexce-weekly.yml",
+      "rexce-auditor.yml",
+      "rexce-contract-diff.yml",
+      "rexce-snapshot-sign.yml",
+      "rexce-autosync.yml"
+    ]
+  },
+  "reporting": {
+    "aggregate": {
+      "csv": true,
+      "json": true,
+      "totals_csv": true
+    },
+    "summary_file": "rer-adoption-summary.json"
+  },
+  "rexce_version": "1.0",
+  "validation": {
+    "rules": [
+      {
+        "id": "paths_exist",
+        "level": "error"
+      },
+      {
+        "id": "json_yaml_sync",
+        "level": "error"
+      }
+    ]
+  }
+}

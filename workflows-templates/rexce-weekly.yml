@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: BSD-2-Clause
+name: rexce-weekly
+on:
+  schedule:
+    - cron: '0 4 * * 0'
+jobs:
+  weekly:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo Weekly

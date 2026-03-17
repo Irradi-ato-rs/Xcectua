@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: BSD-2-Clause
+name: rexce-validation
+on:
+  workflow_dispatch: {}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tests/validate_contract.py contract/rexce-contract.yml contract/rexce-contract.json
