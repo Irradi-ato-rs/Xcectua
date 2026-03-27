@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "xce-wave-plan.schema.v1.json",
+  "title": "Xcectua Wave Plan",
+  "type": "object",
+  "required": [
+    "version",
+    "org",
+    "generated_at",
+    "pr_mode",
+    "impacted_repositories"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "org": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "pr_mode": {
+      "type": "boolean",
+      "description": "Whether PR-mode is intended for execution"
+    },
+    "impacted_repositories": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "waves": {
+      "type": "array",
+      "description": "Optional wave breakdown",
+      "items": {
+        "type": "object",
+        "required": ["wave_id", "repos"],
+        "properties": {
+          "wave_id": { "type": "integer" },
+          "repos": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

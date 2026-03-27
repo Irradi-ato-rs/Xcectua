@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "org-scan.schema.v1.json",
+  "title": "Org Governance Presence Scan",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["repo", "branch", "governance"],
+    "properties": {
+      "repo": {
+        "type": "string",
+        "description": "owner/repo"
+      },
+      "branch": {
+        "type": "string"
+      },
+      "governance": {
+        "type": "object",
+        "required": ["rexce", "rer_doctor", "contract"],
+        "properties": {
+          "rexce": {
+            "type": "boolean"
+          },
+          "rer_doctor": {
+            "type": "boolean"
+          },
+          "contract": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "additionalProperties": false
+  }
+}
